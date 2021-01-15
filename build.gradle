@@ -1,0 +1,27 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.faraz'
+version = '1'
+sourceCompatibility = '8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.springframework', name: 'spring-oxm'
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+	compile group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.2'
+	compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '3.0.0'
+	compile group: 'org.eclipse.persistence', name: 'org.eclipse.persistence.moxy', version: '2.7.3'
+}
+
+test {
+	useJUnitPlatform()
+}
